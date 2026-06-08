@@ -3,21 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <title>HTML Accesibility Assignment</title>
+<style>
+    body {
+        background-color: #efacac;
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
 
-    <style>
-        body {
-            background-color: #f0f0f0;
-            font-family: Arial, sans-serif;
-            margin: 20px;
+    .special-paragraph {
+        font-family: "Courier New", monospace;
+    }
+
+    a:hover {
+        color: red;
+        text-decoration: underline;
+    }
+
+    a:focus {
+        background-color: yellow;
+        outline: 2px solid black;
+    }
+
+     .visually-hidden {
+        position: absolute;
+        left: -9999px;
+    }      
+    table {
+            border-collapse: collapse;
+            width: 80%;
         }
 
-        .special-paragraph {
-            color: #333;
-            font-size: 18px;
-            line-height: 1.5;
+        table, th, td {
+            border: 1px solid black;
         }
-    </style>
-<body>
+
+        th {
+            background-color: lightblue;
+            padding: 8px;
+        }
+
+        td {
+            padding: 8px;
+        }
+</style>
+</head>
+    <a href="#main-content">Skip to Main Content</a>
+    <h1 id=main-content>HTML Accessibility Assignment</h1>
+<h2>Introduction</h2>
+
+<p>
+    <b>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</b>
+
+    </p>
+<p style="font-family:veranda;">"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
+<p>
+    <em>"os et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."</em>
+</p>
+</body>
+<h2>
+    <sub>Lists</sub> and <sup>Links</sup>
+</h2>
+<h3>Undordered List</h3>
+<ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>Accessibility</li>
+</ul>
+<h3>Ordered List</h3>
+<ol>
+    <li>JavaScript</li>
+    <li>React</li>
+    <li>Node.js</li>
+</ol>
+<a href="https://www.w3schools.com/" target="_blank">Visit W3Schools for more!</a>
+<h2>
+    Images
+</h2>
+<img src="accessibility.jpeg" alt="An image showing various accessibility icons, including a wheelchair symbol, a hearing aid symbol, and a braille symbol. The icons are arranged in a grid pattern with a light blue background.">
+<br><br>
+<img 
+src="chartbarcolor.jpeg" 
+alt="A bar chart showing color-coded data points."
+aria-describedby="barchart-description">
+
+    <div>
+     <p id="barchart-description" class="visually-hidden">
+        bar chart showing preffered operating systems among students. Windows has the highest preference with 40%, followed by macOS with 30%, Linux with 20%, and Other with 10%_." class="visually-hidden">
+    </div>
+       <h2>Accessible Data Table</h2>
+
+    <table>
+        <tr>
+            <th scope="col">Student</th>
+            <th scope="col">Course</th>
+            <th scope="col">Grade</th>
+        </tr>
+
+        <tr>
+            <th scope="row">Jamie</th>
+            <td>HTML</td>
+            <td>95</td>
+        </tr>
+
+        <tr>
+            <th scope="row">Jane</th>
+            <td>CSS</td>
+            <td>88</td>
+        </tr>
+
+        <tr>
+            <th scope="row">Johnny</th>
+            <td>Accessibility</td>
+            <td>92</td>
+        </tr>
+    </table>
+    <h2>Form Elements</h2>
+
+    <form>
+  
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+
+        <br><br>
+
+  
+        <label>
+            <input type="checkbox" name="newsletter">
+            Subscribe to Newsletter
+        </label>
+
+        <br><br>
+
+  
+        <p>Preferred Learning Method:</p>
+
+        <label>
+            <input type="radio" name="learning" value="online">
+            Online
+        </label>
+
+        <label>
+            <input type="radio" name="learning" value="in-person">
+            In Person
+        </label>
+
+        <br><br>
+
+
+        <button type="submit">Submit</button>
+    </form>
 
 </body>
 </html>
+
+
+
+
